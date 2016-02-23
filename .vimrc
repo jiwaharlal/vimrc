@@ -2,6 +2,7 @@ set clipboard=unnamedplus
 set tabstop=3 shiftwidth=3 expandtab
 set number
 set hlsearch
+colorscheme morning
 
 let mapleader=","
 set timeout timeoutlen=1500
@@ -29,6 +30,8 @@ map <M-o> :A<CR>                             " Alt-o Switch header/source with a
 "map <M-o> :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>  " Brute switch header/source for c++
 "
 map <M-m> :TagbarToggle<CR><C-w>l         " Alt-m toggles tagbar - class methods etc.
+"map tt TagbarToggle
+nmap ,tt :TagbarToggle<CR><C-w>l
 
 nmap ,cl :let @+=expand("%")<CR>          " ',cl' sequnce in command mode will copy current file's path to clipboard
 
@@ -47,12 +50,13 @@ set secure
 
 let &path.="src/include,/usr/include/AL,"
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+" set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " YouCompleteMe default config which works for all locations
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 nmap <F2> :YcmCompleter GoTo<CR>
 
+" let g:acp_enableAtStartup = 1
 " Vundle
 " Plugin management
 " Please set everything else above
@@ -67,8 +71,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'FuzzyFinder'
-Plugin 'L9'
+"Plugin 'FuzzyFinder'
+"Plugin 'L9'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'exvim/ex-gsearch'
 Plugin 'exvim/ex-utility'
@@ -82,6 +86,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'wincent/command-t'
 "Plugin 'SkidanovAlex/CtrlK'
 Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/a.vim'
+"Plugin 'exvim/ex-autocomplpop'
+Plugin 'rking/ag.vim'
+Plugin 'rgarver/Kwbd.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
