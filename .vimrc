@@ -10,9 +10,9 @@ set timeout timeoutlen=1500
 nnoremap q Kwbd
 ca q Kwbd                                    " override q command to close buffer but not window
 map <M-0> :NERDTreeToggle<CR>                " Alt-0 will open/close folder tree navigator
-"map <C-tab> :bn<CR>:redraw<CR>:ls<CR>        " Ctrl-Tab to switch to next buffer
-"map <C-S-tab> :bp<CR>:redraw<CR>:ls<CR>      " Ctrl-Shift-Tab to switch to previous buffer
 map <C-tab> :ToggleBufExplorer<CR>                 " Ctrl-tab will open buffexplorer bufers window
+
+let g:fzf_launcher = 'rxvt -geometry 120x30 -font 9x15 -e sh -c %s'
 
 map <C-h> :wincmd h<CR>                      " Ctrl-h moves cursor to the left split window (folder tree)
 map <C-l> :wincmd l<CR>                      " Ctrl-l moves cursor to the right split window (edited file)
@@ -27,15 +27,11 @@ map <C-s> :EXGSearchToggle<CR>            " Ctrl-f open/close search window
 map <M-/> <leader>c<space>                " Alt-/ Toggle comment on line/block
 
 map <M-o> :A<CR>                             " Alt-o Switch header/source with a.vim
-"map <M-o> :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>  " Brute switch header/source for c++
-"
+
 map <M-m> :TagbarToggle<CR><C-w>l         " Alt-m toggles tagbar - class methods etc.
-"map tt TagbarToggle
 nmap ,tt :TagbarToggle<CR><C-w>l
 
 nmap ,cl :let @+=expand("%")<CR>          " ',cl' sequnce in command mode will copy current file's path to clipboard
-
-"map <C-k> <C-p>
 
 "To start exploring in the current window, use: >
  "<Leader>be   or   :BufExplorer   or   Your custom key mapping
@@ -71,25 +67,23 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-"Plugin 'FuzzyFinder'
-"Plugin 'L9'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'exvim/ex-gsearch'
 Plugin 'exvim/ex-utility'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'junegunn/fzf'
+Plugin 'majutsushi/tagbar'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rdnetto/YCM-Generator'
+Plugin 'rgarver/Kwbd.vim'
+Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-Plugin 'wincent/command-t'
-"Plugin 'SkidanovAlex/CtrlK'
-Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/a.vim'
-"Plugin 'exvim/ex-autocomplpop'
-Plugin 'rking/ag.vim'
-Plugin 'rgarver/Kwbd.vim'
+Plugin 'wincent/command-t'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
