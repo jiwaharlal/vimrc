@@ -4,6 +4,13 @@ set number
 set hlsearch
 colorscheme morning
 
+" auto remove trailing whitespaces
+autocmd BufWritePre * :%s/\s\+$//e
+
+" highilght trailing whitespaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
 let mapleader=","
 set timeout timeoutlen=1500
 
@@ -11,6 +18,8 @@ nnoremap q Kwbd
 ca q Kwbd                                    " override q command to close buffer but not window
 map <M-0> :NERDTreeToggle<CR>                " Alt-0 will open/close folder tree navigator
 map <C-tab> :ToggleBufExplorer<CR>                 " Ctrl-tab will open buffexplorer bufers window
+"autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+map <C-r> :NERDTreeFind<CR> zz :wincmd p<CR>
 
 let g:fzf_launcher = 'rxvt -geometry 120x30 -font 9x15 -e sh -c %s'
 
@@ -22,7 +31,7 @@ map <C-Left> :wincmd ><CR>                   " Ctrl-left adjust window width
 map <C-Right> :wincmd <<CR>                  " Ctrl-right adjust window width
 
 map <C-f> :EXGSearchCWord<CR>             " Ctrl-f search word under cursor
-map <C-s> :EXGSearchToggle<CR>            " Ctrl-f open/close search window
+map <C-s> :EXGSearchToggle<CR>            " Ctrl-s open/close search window
 
 map <M-/> <leader>c<space>                " Alt-/ Toggle comment on line/block
 
@@ -44,13 +53,17 @@ set splitright
 set exrc
 set secure
 
-let &path.="src/include,/usr/include/AL,"
+let &path.="src/include,/usr/include/AL,/usr/local/include,/usr/include/x86_64-linux-gnu"
 
 " set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+let g:clang_library_path = "/usr/lib/llvm-3.6/lib"
 
 " YouCompleteMe default config which works for all locations
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 nmap <F2> :YcmCompleter GoTo<CR>
+ca dec YcmCompleter GoToDeclaration
+ca def YcmCompleter GoToDefinition
 
 " let g:acp_enableAtStartup = 1
 " Vundle
