@@ -40,7 +40,6 @@ map <M-o> :A<CR>                             " Alt-o Switch header/source with a
 map <M-m> :TagbarToggle<CR><C-w>l         " Alt-m toggles tagbar - class methods etc.
 nmap ,tt :TagbarToggle<CR><C-w>l
 
-nmap ,cl :let @+=expand("%")<CR>          " ',cl' sequnce in command mode will copy current file's path to clipboard
 
 "To start exploring in the current window, use: >
  "<Leader>be   or   :BufExplorer   or   Your custom key mapping
@@ -99,3 +98,6 @@ Plugin 'wincent/command-t'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+nmap <leader>cp :let @+=expand("%:p")<CR>          " ',cp' sequnce in command mode will copy current file's path to clipboard
+nmap <leader>cn :let @+=expand("%:t")<CR>          " ',cn' will copy current file's name to clipboard
