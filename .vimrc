@@ -4,6 +4,9 @@ set number
 set hlsearch
 colorscheme morning
 
+set ignorecase
+set smartcase
+
 " auto remove trailing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
 
