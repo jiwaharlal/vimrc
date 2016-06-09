@@ -3,6 +3,8 @@ set tabstop=3 shiftwidth=3 expandtab
 set number
 set hlsearch
 colorscheme morning
+syntax enable
+set autoread
 
 set ignorecase
 set smartcase
@@ -21,7 +23,7 @@ nnoremap q Kwbd
 ca q Kwbd                                    " override q command to close buffer but not window
 map <M-0> :NERDTreeToggle<CR>                " Alt-0 will open/close folder tree navigator
 map <C-tab> :ToggleBufExplorer<CR>                 " Ctrl-tab will open buffexplorer bufers window
-"autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+
 map <C-r> :NERDTreeFind<CR> zz :wincmd p<CR>
 
 let g:fzf_launcher = 'rxvt -geometry 120x30 -font 9x15 -e sh -c %s'
@@ -42,7 +44,6 @@ map <M-o> :A<CR>                             " Alt-o Switch header/source with a
 
 map <M-m> :TagbarToggle<CR><C-w>l         " Alt-m toggles tagbar - class methods etc.
 nmap ,tt :TagbarToggle<CR><C-w>l
-
 
 "To start exploring in the current window, use: >
  "<Leader>be   or   :BufExplorer   or   Your custom key mapping
