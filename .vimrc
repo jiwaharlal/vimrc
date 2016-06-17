@@ -9,8 +9,14 @@ set autoread
 set ignorecase
 set smartcase
 
+" color columns
+set colorcolumn=110        " highlight column after 'textwidth'
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+
 " auto remove trailing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
+" hightlight word under cursor
+autocmd CursorMoved * exe printf('match CursorLine /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
 " highilght trailing whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red
