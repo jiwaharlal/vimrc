@@ -51,6 +51,8 @@ map <M-o> :A<CR>                             " Alt-o Switch header/source with a
 map <M-m> :TagbarToggle<CR><C-w>l         " Alt-m toggles tagbar - class methods etc.
 nmap ,tt :TagbarToggle<CR><C-w>l
 
+nmap ,gt :YcmCompleter GetType<CR>
+
 "To start exploring in the current window, use: >
  "<Leader>be   or   :BufExplorer   or   Your custom key mapping
 "To toggle bufexplorer on or off in the current window, use: >
@@ -104,13 +106,14 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/a.vim'
+Plugin 'Rip-Rip/clang_complete'
 "Plugin 'wincent/command-t'
-"Plugin 'dahu/vimple'
-"Plugin 'dahu/Asif'
-"Plugin 'Raimondi/vim-buffalo'
-"Plugin 'Raimondi/VimRegStyle'
-"Plugin 'vim-scripts/SyntaxRange'
-"Plugin 'mjakl/vim-asciidoc'
+Plugin 'dahu/vimple'
+Plugin 'dahu/Asif'
+Plugin 'Raimondi/vim-buffalo'
+Plugin 'Raimondi/VimRegStyle'
+Plugin 'vim-scripts/SyntaxRange'
+Plugin 'mjakl/vim-asciidoc'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
