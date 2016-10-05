@@ -1,0 +1,15 @@
+0. cmake 3.x
+sudo add-apt-repository ppa:george-edison55/cmake-3.x
+sudo apt-get update
+sudo apt-get install cmake
+
+1. vim
+sudo apt-get install vim-gnome
+ln ~/build/vimrc/.vimrc ~/.vimrc
+launch vim, run :PluginInstall
+sudo apt-get install rxvt
+
+YouCompleteMe
+sudo apt-get install python-dev python3-dev
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
