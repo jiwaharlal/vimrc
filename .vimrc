@@ -104,7 +104,13 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/a.vim'
-Plugin 'wincent/command-t'
+"Plugin 'wincent/command-t'
+"Plugin 'dahu/vimple'
+"Plugin 'dahu/Asif'
+"Plugin 'Raimondi/vim-buffalo'
+"Plugin 'Raimondi/VimRegStyle'
+"Plugin 'vim-scripts/SyntaxRange'
+"Plugin 'mjakl/vim-asciidoc'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
