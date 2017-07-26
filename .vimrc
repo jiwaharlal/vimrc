@@ -1,5 +1,5 @@
 set clipboard=unnamedplus
-set tabstop=3 shiftwidth=3 expandtab
+set tabstop=4 shiftwidth=4 expandtab
 set number
 set hlsearch
 colorscheme morning
@@ -10,7 +10,7 @@ set ignorecase
 set smartcase
 
 " color columns
-set colorcolumn=110        " highlight column after 'textwidth'
+set colorcolumn=100        " highlight column after 'textwidth'
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " auto remove trailing whitespaces
@@ -52,6 +52,7 @@ map <M-m> :TagbarToggle<CR><C-w>l         " Alt-m toggles tagbar - class methods
 nmap ,tt :TagbarToggle<CR><C-w>l
 
 nmap ,gt :YcmCompleter GetType<CR>
+nmap ,fi :YcmCompleter FixIt<CR>
 
 "To start exploring in the current window, use: >
  "<Leader>be   or   :BufExplorer   or   Your custom key mapping
@@ -68,7 +69,7 @@ let &path.="src/include,/usr/include/AL,/usr/local/include,/usr/include/x86_64-l
 
 " set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-let g:clang_library_path = "/usr/lib/llvm-3.6/lib"
+" let g:clang_library_path = "/usr/lib/llvm-3.8/lib"
 
 " YouCompleteMe default config which works for all locations
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
@@ -92,7 +93,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'exvim/ex-gsearch'
 Plugin 'exvim/ex-utility'
 Plugin 'jlanzarotta/bufexplorer'
@@ -106,7 +107,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/a.vim'
-Plugin 'Rip-Rip/clang_complete'
+"Plugin 'Rip-Rip/clang_complete'
 "Plugin 'wincent/command-t'
 Plugin 'dahu/vimple'
 Plugin 'dahu/Asif'
